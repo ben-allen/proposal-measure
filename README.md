@@ -46,7 +46,7 @@ Note: ⚠️  All property/method names up for bikeshedding.
 
 * `precision`, a number indicating the precision of the measurement. This precision is (provisionally) represented in terms of the number of fractional digits displayed.
 
-* `exponent`, an integer representing the power to which the unit is raised. "centimeters squared" could be {unit: "centimeter", exponent: 2}. It may be preferable to use CLDR names for commonly-used units; "cubic-meter" instead of {unit: "meter", exponent: 3}, for example.
+* `exponent`, an integer representing the power to which the unit is raised. "centimeters squared" could be `{unit: "centimeter", exponent: 2}`. It may be preferable to use CLDR names for commonly-used units; `"cubic-meter"` instead of `{unit: "meter", exponent: 3}`, for example.
 
 * `usage`, the type of thing being measured. Useful for localization.
 
@@ -179,8 +179,9 @@ Raise a Measurement to an exponent:
     // { value: 30.5, unit: "centimeter" }
 ```
 
-* All of the above operations throw if incompatible dimensions are used, for example, adding 
-a measure of volume to a measure of speed.
+* All of the above operations throw if incompatible dimensions are used. For example, adding 
+a measure of volume to a measure of speed would throw, as would adding a scalar value to a 
+non-`"dimensionless"` Measurement.
 
 ### User-defined units
 
